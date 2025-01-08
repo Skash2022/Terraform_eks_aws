@@ -14,13 +14,7 @@ module "eks" {
     application = "myapp"
   }
 
-  eks_managed_node_groups = {
-    dev = {
-      min_size     = 1
-      max_size     = 3
-      desired_size = 3
-
-      instance_types = ["t2.small"]
-    }
+  cluster_compute_config = {
+    enabled = true
   }
 }
